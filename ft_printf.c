@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:41:12 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/13 16:04:25 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:38:30 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,15 @@ int ft_printf(const char *s, ...)
 				j += ft_putnbr(va_arg(args, int));
 				i++;
 			}
-			if(s[i + 1] == 'x')
+			else if(s[i + 1] == 'x')
 			{
-				j += ft_putnbr(va_arg(args, int));
+				j += ft_putnbr_hex(va_arg(args, int));
+				i++;
+			}
+			else if(s[i + 1] == 'p')
+			{
+				j += ft_putstr("0x");
+				j += ft_putnbr_hex(va_arg(args, int));
 				i++;
 			}
 			else if(s[i + 1] == 'c')

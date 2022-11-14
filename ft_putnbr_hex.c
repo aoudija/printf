@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putnbr_hex.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:02:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/13 16:03:51 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:29:02 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	putnbr_hex(int	n)
+ int	ft_putnbr_hex(unsigned long int n)
 {
-	int	ft_putnbr(int n)
-{
-	long	nb;
+	char	*hex;
+	int		j;
 
-	nb = (long)n;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 16);
-		nb = nb % 16;
-	}
-	if (nb < 10)
-	{
-		ft_putchar(nb + 48);
-	}
-	return (Cnt((long)n));
-}
+	j = 0;
+	hex = "0123456789abcdef";
+	if (n / 16 > 0)
+		ft_putnbr_hex(n / 16);
+	j += ft_putchar(hex[n % 16]);
+	return (j);
 }
