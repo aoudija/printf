@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 10:52:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/16 12:24:22 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/16 17:17:39 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	    ft_printf(const char *s, ...);
 int	    ft_putnbr(int n);
 int	    ft_putchar(char c);
 int	    ft_putstr(const char *s);
-int	    ft_putnbr_hex(unsigned long n, char *tab);
+int	    ft_putnbr_hex(unsigned long long n, char *tab);
 int	    ft_optimize(va_list args, char c);
 int     ft_ptnbr_u(unsigned int nb);
 char    *ft_itoa(int n);

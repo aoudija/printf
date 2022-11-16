@@ -6,13 +6,13 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 15:02:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/16 11:12:57 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/16 17:16:16 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putnbr_hex(unsigned long n, char *tab)
+int	ft_putnbr_hex(unsigned long long n, char *tab)
 {
 	static int	j = 0;
 
