@@ -1,10 +1,11 @@
 #include "libftprintf.h"
-
+#include <limits.h>
 int main()
 {
+    // TEST(6, print(" %p %p ", LONG_MIN, LONG_MAX));
+	// TEST(7, print(" %p %p ", INT_MIN, INT_MAX));
+	// TEST(8, print(" %p %p ", ULONG_MAX, -ULONG_MAX));
     char *s;
-    // s = calloc(5, 1);
-    // memcpy(s, "ibra", 4);
-    // // ft_printf("%x",s);
-    printf("%p\t%x\n", &s, &s);
+    ft_printf("\n&%d&",printf("%x", -1));
+    // printf("%p\t%x\n", &s, &s);
 }

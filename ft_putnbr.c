@@ -1,43 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/15 10:52:05 by aoudija           #+#    #+#             */
+/*   Updated: 2022/11/16 12:24:04 by aoudija          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libftprintf.h"
 
-int	Cnt(long n)
+int	ft_putnbr(int nb)
 {
-	int	i;
+	char	*s;
+	int		len;
 
-	i = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-	{
-		n *= -1;
-		i++;
-	}
-	while (n > 0)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_putnbr(int n)
-{
-	long	nb;
-
-	nb = (long)n;
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		nb = nb % 10;
-	}
-	if (nb < 10)
-	{
-		ft_putchar(nb + 48);
-	}
-	return (Cnt((long)n));
+	len = 0;
+	s = ft_itoa(nb);
+	len = ft_putstr(s);
+	free(s);
+	return (len);
 }

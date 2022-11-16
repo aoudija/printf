@@ -6,58 +6,32 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:41:12 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/14 11:38:30 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/16 11:56:19 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <string.h>
-int ft_printf(const char *s, ...)
+
+int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	int		i;
-	int		j;
+	int		len;
 
 	va_start(args, s);
 	i = 0;
-	j = 0;
+	len = 0;
 	while (s[i])
 	{
 		if (s[i] == '%')
 		{
-			if(s[i + 1] == 'i' || s[i + 1] == 'd')
-			{
-				j += ft_putnbr(va_arg(args, int));
-				i++;
-			}
-			else if(s[i + 1] == 'x')
-			{
-				j += ft_putnbr_hex(va_arg(args, int));
-				i++;
-			}
-			else if(s[i + 1] == 'p')
-			{
-				j += ft_putstr("0x");
-				j += ft_putnbr_hex(va_arg(args, int));
-				i++;
-			}
-			else if(s[i + 1] == 'c')
-			{
-				j += ft_putchar(va_arg(args, int));
-				i++;
-			}
-			else if(s[i + 1] == 's')
-			{
-				j += ft_putstr(va_arg(args, char *));
-				i++;
-			}
-			else
-				j+= ft_putchar('%');
+			len += ft_optimize(args, s[i + 1]);
+			i++;
 		}
 		else
-			j += ft_putchar(s[i]);
+			len += ft_putchar(s[i]);
 		i++;
 	}
 	va_end(args);
-	return (j);
+	return (len);
 }
