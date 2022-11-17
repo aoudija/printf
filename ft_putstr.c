@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 10:52:22 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/15 11:03:09 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:04:31 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,13 @@ int	ft_putstr(const char *s)
 
 	j = 0;
 	i = 0;
-	while (s[i])
-	{
-		j += ft_putchar(s[i]);
-		i++;
-	}
+	if (!s)
+		j += ft_putstr("(null)");
+	else
+		while (s[i])
+		{
+			j += ft_putchar(s[i]);
+			i++;
+		}
 	return (j);
 }

@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:16:13 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/16 17:18:24 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/17 17:05:19 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_optimize(va_list args, char c)
 	if (c == 'i' || c == 'd')
 		j = ft_putnbr(va_arg(args, int));
 	else if (c == 'u')
-		j = ft_ptnbr_u(va_arg(args, unsigned long int));
+		j = ft_ptnbr_u(va_arg(args, unsigned int));
 	else if (c == 'x')
 		j = ft_putnbr_hex(va_arg(args, unsigned int), "0123456789abcdef");
 	else if (c == 'X')
@@ -33,16 +33,10 @@ int	ft_optimize(va_list args, char c)
 	else if (c == 'c')
 		j = ft_putchar(va_arg(args, int));
 	else if (c == 's')
-	{
-		char *p = va_arg(args, char *);
-		if (p != NULL)
-			j = ft_putstr(p);
-		else
-			j = ft_putstr("(null)");
-	}
+		j = ft_putstr(va_arg(args, char *));
 	else if (c == '%')
 		j = ft_putchar('%');
 	else
-		j = ft_putchar(va_arg(args, int));
+		j = ft_putchar(c);
 	return (j);
 }

@@ -6,6 +6,6 @@ int main()
 	// TEST(7, print(" %p %p ", INT_MIN, INT_MAX));
 	// TEST(8, print(" %p %p ", ULONG_MAX, -ULONG_MAX));
     char *s;
-    ft_printf("\n&%d&",ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
+    ft_printf("\n&%d&",ft_printf("%+"));
     // printf("%p\t%x\n", &s, &s);
 }
