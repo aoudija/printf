@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_put_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 10:52:48 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/18 11:22:22 by aoudija          ###   ########.fr       */
+/*   Created: 2022/11/18 10:07:48 by aoudija           #+#    #+#             */
+/*   Updated: 2022/11/18 10:28:51 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h>
+int	ft_put_p(unsigned long long n)
+{
+	char	*tab;
+	int		j;
 
-int	ft_printf(const char *s, ...);
-int	ft_putnbr(int n);
-int	ft_putchar(char c);
-int	ft_putstr(const char *s);
-int	ft_putnbr_hex(unsigned long n, char *tab);
-int	ft_optimize(va_list args, char c);
-int	ft_ptnbr_u(unsigned int nb);
-int	ft_put_p(unsigned long long n);
-
-#endif
+	j = 0;
+	tab = "0123456789abcdef";
+	if (n / 16 > 0)
+		j += ft_putnbr_hex(n / 16, tab);
+	j += ft_putchar(tab[n % 16]);
+	return (j);
+}

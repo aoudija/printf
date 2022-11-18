@@ -6,7 +6,7 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 09:16:13 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/17 17:05:19 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/18 10:11:29 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_optimize(va_list args, char c)
 	else if (c == 'p')
 	{
 			j += ft_putstr("0x");
-			j += ft_putnbr_hex(va_arg(args, unsigned long long), "0123456789abcdef");
+			j += ft_put_p(va_arg(args, unsigned long long));
 	}
 	else if (c == 'c')
 		j = ft_putchar(va_arg(args, int));
