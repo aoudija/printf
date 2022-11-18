@@ -6,13 +6,13 @@
 /*   By: aoudija <aoudija@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 10:52:22 by aoudija           #+#    #+#             */
-/*   Updated: 2022/11/18 10:36:37 by aoudija          ###   ########.fr       */
+/*   Updated: 2022/11/18 15:21:02 by aoudija          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putstr(const char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 	int	j;
